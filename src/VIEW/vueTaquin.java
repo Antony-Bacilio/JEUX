@@ -1,25 +1,18 @@
 package VIEW;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.FlowLayout;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class vueTaquin extends JFrame{
 	private JTextField textField;
 	private JTextField textField_1;
 	
 	public vueTaquin() {
-		
 		
 		JButton button = new JButton("1");
 		
@@ -59,6 +52,7 @@ public class vueTaquin extends JFrame{
 		btnExit.addActionListener(new ActionListener() {
 			
 			 public void actionPerformed(ActionEvent arg0) {
+				 System.exit(0);
 			}
 		});
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
