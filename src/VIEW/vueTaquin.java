@@ -9,8 +9,9 @@ import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class vueTaquin extends JFrame{
-	private JTextField textField;
-	private JTextField textField_1;
+	public JTextField textField;
+	public JTextField textField_1;
+	public JButton btnExit;
 	
 	public vueTaquin() {
 		
@@ -47,14 +48,20 @@ public class vueTaquin extends JFrame{
 		JLabel lblTemps = new JLabel("Temps : ");
 		
 		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+				textField_1.setText(null);
+			}
+		});
 		
-		JButton btnExit = new JButton("Exit");
-		btnExit.addActionListener(new ActionListener() {
+		btnExit = new JButton("Exit");
+		/*btnExit.addActionListener(new ActionListener() {
 			
 			 public void actionPerformed(ActionEvent arg0) {
 				 System.exit(0);
 			}
-		});
+		});*/
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -134,15 +141,8 @@ public class vueTaquin extends JFrame{
 		);
 		getContentPane().setLayout(groupLayout);
 	}
-
-	public static void main(String[] args) {
-		// TODO Stub de la méthode généré automatiquement
-
-		vueTaquin fenetre = new vueTaquin();
-		System.out.println("Le Taquin");
-		fenetre.setVisible(true);
-		fenetre.setSize(850,500);
-		fenetre.setLocationRelativeTo(null);
+	
+	public void ejemple(int n){
 		
 	}
 }

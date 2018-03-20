@@ -1,14 +1,10 @@
-package MODEL;
+package CONTROLLER;
 
-public class modelTaquin {
+public class controllerTicTacToe {
 
 	public static void main(String[] args) {
 		// TODO Stub de la méthode généré automatiquement
 
 	}
-	
-	/*public void btnExit(){
-		
-	}*/
 
 }
