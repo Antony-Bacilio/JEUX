@@ -1,12 +1,12 @@
-package CONTROLLER;
+package MODELE;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 @SuppressWarnings("serial")
-public class taquinImpl  extends UnicastRemoteObject implements taquinInterface{
+public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxInterface{
 
-	public taquinImpl() throws RemoteException {
+	public modeleJeuxImpl() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -16,12 +16,6 @@ public class taquinImpl  extends UnicastRemoteObject implements taquinInterface{
 	public double add(double a, double b) throws RemoteException {
 		// TODO Auto-generated method stub
 		return a+b;
-	}
-
-	@Override
-	public double mul(double a, double b) throws RemoteException {
-		// TODO Auto-generated method stub
-		return a*b;
 	}
 
 }
