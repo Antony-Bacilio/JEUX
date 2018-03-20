@@ -32,6 +32,8 @@ public class controleurTaquin {
     @FXML
     private Label lblTaquin;
     @FXML
+    private Button btnCommencer;
+    @FXML
     private Button btnReset;
     @FXML
     private Button btnExit;
@@ -45,8 +47,29 @@ public class controleurTaquin {
     private TextArea txtMouvement;
     
     @FXML
-    void btnClic(ActionEvent event) {
-
+    void Commencer(ActionEvent event) {
+    	/*btn1.setText("2");
+    	btn2.setText("3");
+    	btn3.setText("1");
+    	btn4.setText("8");
+    	btn5.setText("");
+    	btn6.setText("6");
+    	btn7.setText("5");
+        btn8.setText("7");
+        btn9.setText("4");*/
+    	btnCommencer.setDisable(true);
+    	btnReset.setDisable(false);
     }
-
+    
+    @FXML
+    void Exit(ActionEvent event) {
+    	System.exit(1);
+    }
+    
+    @FXML
+    void btnClic(ActionEvent event) {
+    	/*btn9.setText(btn6.getText());
+    	btn6.setText(null);*/
+    }
+    
 }
