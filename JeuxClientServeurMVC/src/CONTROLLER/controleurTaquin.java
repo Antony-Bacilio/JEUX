@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -51,6 +52,10 @@ public class controleurTaquin {
     @FXML
     private TextArea txtMouvement;
     
+    public int mouvements = 0;
+    
+
+    
     @FXML
     void Commencer(ActionEvent event) {
     	/*btn1.setText("2");
@@ -85,9 +90,166 @@ public class controleurTaquin {
     }
     
     @FXML
-    void btnClic(ActionEvent event) {
-    	/*btn9.setText(btn6.getText());
-    	btn6.setText(null);*/
+    void actionMove() {
+    	this.mouvements++;
+    	this.txtMouvement.setText(String.valueOf(mouvements));
     }
+    
+    @FXML
+    void actionBtn1(ActionEvent event) {
+    		if(btn2.getText()==""){
+    			btn2.setText(btn1.getText());
+    			btn1.setText("");
+    			this.actionMove();
+    		}
+    		if(btn4.getText()==""){
+    			btn4.setText(btn1.getText());
+    			btn1.setText("");
+    			this.actionMove();
+    		}	
+    }
+
+    @FXML
+    void actionBtn2(ActionEvent event) {
+    	if(btn1.getText()==""){
+			btn1.setText(btn2.getText());
+			btn2.setText("");
+			this.actionMove();
+		}
+    	if(btn3.getText()==""){
+			btn3.setText(btn2.getText());
+			btn2.setText("");
+			this.actionMove();
+		}
+    	if(btn5.getText()==""){
+			btn5.setText(btn2.getText());
+			btn2.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn3(ActionEvent event) {
+    	if(btn2.getText()==""){
+			btn2.setText(btn3.getText());
+			btn3.setText("");
+			this.actionMove();
+		}
+    	if(btn6.getText()==""){
+			btn6.setText(btn3.getText());
+			btn3.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn4(ActionEvent event) {
+    	if(btn1.getText()==""){
+			btn1.setText(btn4.getText());
+			btn4.setText("");
+			this.actionMove();
+		}
+    	if(btn5.getText()==""){
+			btn5.setText(btn4.getText());
+			btn4.setText("");
+			this.actionMove();
+		}
+    	if(btn7.getText()==""){
+			btn7.setText(btn4.getText());
+			btn4.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn5(ActionEvent event) {
+    	if(btn2.getText()==""){
+			btn2.setText(btn5.getText());
+			btn5.setText("");
+			this.actionMove();
+		}
+    	if(btn4.getText()==""){
+			btn4.setText(btn5.getText());
+			btn5.setText("");
+			this.actionMove();
+		}
+    	if(btn6.getText()==""){
+			btn6.setText(btn5.getText());
+			btn5.setText("");
+			this.actionMove();
+		}
+    	if(btn8.getText()==""){
+			btn8.setText(btn5.getText());
+			btn5.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn6(ActionEvent event) {
+    	if(btn3.getText()==""){
+			btn3.setText(btn6.getText());
+			btn6.setText("");
+			this.actionMove();
+		}
+		if(btn5.getText()==""){
+			btn5.setText(btn6.getText());
+			btn6.setText("");
+			this.actionMove();
+		}
+		if(btn9.getText()==""){
+			btn9.setText(btn6.getText());
+			btn6.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn7(ActionEvent event) {
+    	if(btn4.getText()==""){
+			btn4.setText(btn7.getText());
+			btn7.setText("");
+			this.actionMove();
+		}
+		if(btn8.getText()==""){
+			btn8.setText(btn7.getText());
+			btn7.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn8(ActionEvent event) {
+    	if(btn5.getText()==""){
+			btn5.setText(btn8.getText());
+			btn8.setText("");
+			this.actionMove();
+		}
+		if(btn7.getText()==""){
+			btn7.setText(btn8.getText());
+			btn8.setText("");
+			this.actionMove();
+		}
+		if(btn9.getText()==""){
+			btn9.setText(btn8.getText());
+			btn8.setText("");
+			this.actionMove();
+		}
+    }
+
+    @FXML
+    void actionBtn9(ActionEvent event) {
+    	if(btn6.getText()==""){
+			btn6.setText(btn9.getText());
+			btn9.setText("");
+			this.actionMove();
+		}
+		if(btn8.getText()==""){
+			btn8.setText(btn9.getText());
+			btn9.setText("");
+			this.actionMove();
+		}
+    }
+    
     
 }
