@@ -33,10 +33,10 @@ public class controleurAccueil {
     	Stage menu = (Stage) btnTictactoc.getScene().getWindow();
         menu.close();
         try {
-              AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueTaquin.fxml"));
+              AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vuePendu.fxml"));
               Scene scene = new Scene(root,600,400); 
               Stage stage = new Stage();
-	            stage.setTitle("Taquin");       
+	            stage.setTitle("Jeu Pendu");       
 	            stage.setScene(scene);		
 	            stage.setResizable(false);
 	            stage.show();
@@ -50,10 +50,10 @@ public class controleurAccueil {
     	Stage menu = (Stage) btnTictactoc.getScene().getWindow();
         menu.close();
         try {
-              AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vuePendu.fxml"));
+              AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueTaquin.fxml"));
               Scene scene = new Scene(root,600,400); 
               Stage stage = new Stage();
-	            stage.setTitle("Taquin");       
+	            stage.setTitle("Jeu Taquin");       
 	            stage.setScene(scene);		
 	            stage.setResizable(false);
 	            stage.show();

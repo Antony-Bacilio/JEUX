@@ -12,7 +12,7 @@ public class ServeurJeux {
 		// TODO Auto-generated method stub
 
 		try{
-			int port = 7000;
+			int port = 8000;
 			LocateRegistry.createRegistry(port);
 			Naming.rebind("rmi://localhost:"+ port + "/Jeux", new modeleJeuxImpl());
 			System.out.println("\n\tServer prêt pour commencer à Jouer!!!...");

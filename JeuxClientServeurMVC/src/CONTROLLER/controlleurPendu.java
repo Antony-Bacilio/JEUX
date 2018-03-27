@@ -106,7 +106,7 @@ import javafx.scene.paint.Color;
 	    
 	    public void ControlBtn(Button B, char c) {
 	    	this.labelWarn.setText("");
-	    B.setDisable(true);
+	    	B.setDisable(true);
 	    	StringBuilder tmp = new StringBuilder(this.motDevine.getText());
 	    	boolean lettreExist = false;
 	    	if(fois!=1) {

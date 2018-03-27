@@ -1,11 +1,16 @@
 package CONTROLLER;
 
+import CLIENT.ClientJeux;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class controleurTaquin {
 
@@ -63,7 +68,20 @@ public class controleurTaquin {
     
     @FXML
     void Exit(ActionEvent event) {
-    	System.exit(1);
+    	Stage menu = (Stage) btnCommencer.getScene().getWindow();
+        menu.close();
+    	try {
+            AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueAccueil.fxml"));
+            Scene scene = new Scene(root,600,400); 
+            Stage stage = new Stage();
+	            stage.setTitle("Accueil");       
+	            stage.setScene(scene);		
+	            stage.setResizable(false);
+	            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    	//System.exit(1);
     }
     
     @FXML
