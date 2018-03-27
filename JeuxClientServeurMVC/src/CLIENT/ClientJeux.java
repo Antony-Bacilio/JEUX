@@ -55,11 +55,6 @@ public class ClientJeux extends Application{
 	public static void main(String[] argv) throws RemoteException{
 		try{
 			int port = 8000;
-			/*modeleJeuxInterface objCal = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + port+ "/taquin");
-			System.out.println("Client conected...");
-			System.out.println("\n- La Somme  est : " + objCal.add(9, 20) );
-			
-			System.out.println("\n\t\t *********** Bienvenue à : Le Taquin *************");*/
 			modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + port+ "/Jeux");
 			System.out.println("\n\tClient conected...");
 			System.out.println("\n- La Somme  est : " + objJeux.add(9, 20) );
