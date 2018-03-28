@@ -2,6 +2,7 @@ package MODELE;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Random;
 
 @SuppressWarnings("serial")
 public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxInterface{
@@ -18,19 +19,18 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		return a+b;
 	}
 
-
-	@SuppressWarnings("null")
 	public int[] initTaquin(int []carre) throws RemoteException {
 		// TODO Stub de la méthode généré automatiquement
 		int N = carre.length;
 		int K = N;
 		int[] taquin = new int[N];
+		Random rd = new Random();
 
 		for(int i=0; i<N; i++){
 			carre[i] = i+1;
 		}
 		for(int i=0; i<N; i++){
-			int indiceRand = (int) Math.random()*K;           
+			int indiceRand = rd.nextInt(K);//(int) Math.random()*K;           
             taquin[i] = carre[indiceRand];
             carre[indiceRand] = carre[K-1];
             K--;
@@ -45,7 +45,6 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		return mouvements;
 	}
 	
-	@SuppressWarnings("unused")
 	public boolean gagnerTaquin(int[]carre) throws RemoteException {
 		// TODO Stub de la méthode généré automatiquement
 		boolean gagne = false;
@@ -55,8 +54,5 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		}
 		return gagne;
 	}
-
-
-	
 
 }

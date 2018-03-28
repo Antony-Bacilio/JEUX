@@ -55,6 +55,8 @@ public class controleurTaquin {
     private Label lblMouvement;
     @FXML
     private TextArea txtMouvement;
+    @FXML
+    private Label lblMsg;
     
     public int mouvements = 0;
     private int port = 7000;
@@ -170,7 +172,8 @@ public class controleurTaquin {
     			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
     			this.mouvements = objJeux.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
-    		}	
+    		}
+    		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
     @FXML
     void actionBtn2(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
@@ -196,6 +199,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -214,6 +218,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -239,6 +244,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -271,6 +277,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -296,6 +303,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -314,6 +322,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -339,6 +348,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
 
     @FXML
@@ -357,6 +367,7 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
     }
     
 }
