@@ -49,8 +49,9 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		// TODO Stub de la méthode généré automatiquement
 		boolean gagne = false;
 		int N = carre.length;
-		for(int i=0; i<=N; i++){
-			if(carre[i] == i+1 && carre[N] == 0) gagne = true;
+		for(int i=0; i<N; i++){
+			if(carre[i] == i+1) gagne = true;
+			else gagne = false;
 		}
 		return gagne;
 	}

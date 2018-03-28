@@ -57,6 +57,7 @@ public class controleurAccueil {
 	            stage.setScene(scene);		
 	            stage.setResizable(false);
 	            stage.show();
+	            System.out.println("\n\t- Jeu Taquin");
           } catch(Exception e) {
               e.printStackTrace();
           }
