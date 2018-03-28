@@ -40,6 +40,7 @@ public class controleurAccueil {
 	            stage.setScene(scene);		
 	            stage.setResizable(false);
 	            stage.show();
+	            System.out.println("\n\t- Jeu Pendu");
           } catch(Exception e) {
               e.printStackTrace();
           }
@@ -78,6 +79,7 @@ public class controleurAccueil {
 	            stage.setScene(scene);		
 	            stage.setResizable(false);
 	            stage.show();
+	            System.out.println("\n\t- Jeu Tic-Tac-Toe");
           } catch(Exception e) {
               e.printStackTrace();
           }
