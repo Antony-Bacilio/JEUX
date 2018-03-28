@@ -26,4 +26,27 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		return null;
 	}
 
+
+	@SuppressWarnings("unused")
+	@Override
+	public void initTaquin(int []carre) throws RemoteException {
+		// TODO Stub de la méthode généré automatiquement
+		//int taquin[] = {1,2,3,4,5,6,7,8,9};
+		//carre = taquin;
+		int N = carre.length;
+		for(int i=0; i<N; i++){
+			
+			carre[i]= (int) (Math.random()*N+1);
+		}
+	}
+
+
+	@Override
+	public boolean gagnerTaquin(int[]carre) throws RemoteException {
+		// TODO Stub de la méthode généré automatiquement
+		boolean gagne = false;
+		
+		return false;
+	}
+
 }

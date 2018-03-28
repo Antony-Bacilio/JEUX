@@ -1,6 +1,7 @@
 package CONTROLLER;
 
 import CLIENT.ClientJeux;
+import MODELE.modeleJeuxImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,21 +55,27 @@ public class controleurTaquin {
     
     public int mouvements = 0;
     
-
+    //modeleJeuxImpl md = new modeleJeuxImpl();
+    int[] tabTaquin = {1,2,3,4,5,6,7,8,9};
     
     @FXML
     void Commencer(ActionEvent event) {
-    	/*btn1.setText("2");
-    	btn2.setText("3");
-    	btn3.setText("1");
-    	btn4.setText("8");
-    	btn5.setText("");
-    	btn6.setText("6");
-    	btn7.setText("5");
-        btn8.setText("7");
-        btn9.setText("4");*/
     	btnCommencer.setDisable(true);
     	btnReset.setDisable(false);
+    	int N = tabTaquin.length;
+    	for(int i=0; i<N; i++){
+    		tabTaquin[i] =(int) (Math.random()*N+1); 
+    		btn1.setText(String.valueOf(tabTaquin[i]));
+    		btn2.setText(String.valueOf(tabTaquin[i]));
+    		btn3.setText(String.valueOf(tabTaquin[i]));
+    		btn4.setText(String.valueOf(tabTaquin[i]));
+    		btn5.setText(String.valueOf(tabTaquin[i]));
+    		btn7.setText(String.valueOf(tabTaquin[i]));
+    		btn8.setText(String.valueOf(tabTaquin[i]));
+    		btn9.setText(String.valueOf(tabTaquin[i]));
+    		btn1.setText(String.valueOf(tabTaquin[i]));    		
+    	}
+    	//md.initTaquin();
     }
     
     @FXML
