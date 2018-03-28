@@ -20,15 +20,7 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 	}
 
 
-	@Override
-	public ArrayList taquin() throws RemoteException {
-		// TODO Stub de la méthode généré automatiquement
-		return null;
-	}
-
-
 	@SuppressWarnings("unused")
-	@Override
 	public void initTaquin(int []carre) throws RemoteException {
 		// TODO Stub de la méthode généré automatiquement
 		//int taquin[] = {1,2,3,4,5,6,7,8,9};
@@ -47,6 +39,16 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		boolean gagne = false;
 		
 		return false;
+	}
+
+
+	@Override
+	public int actionMove(int mouvements) throws RemoteException {
+		// TODO Stub de la méthode généré automatiquement
+		
+		mouvements++;
+		return mouvements;
+    	//this.txtMouvement.setText(String.valueOf(mouvements));
 	}
 
 }

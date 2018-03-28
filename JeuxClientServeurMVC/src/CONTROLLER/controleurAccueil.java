@@ -1,5 +1,9 @@
 package CONTROLLER;
 
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,12 +29,12 @@ public class controleurAccueil {
     private Button btnTaquin;
 
     @FXML
-    private Button btnTictactoc;
+    private Button btnTictactoe;
 
     @FXML
     void btnPendu(ActionEvent event) {
     	
-    	Stage menu = (Stage) btnTictactoc.getScene().getWindow();
+    	Stage menu = (Stage) btnTictactoe.getScene().getWindow();
         menu.close();
         try {
               AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vuePendu.fxml"));
@@ -47,7 +51,7 @@ public class controleurAccueil {
 
     @FXML
     void btnTaquin(ActionEvent event) {
-    	Stage menu = (Stage) btnTictactoc.getScene().getWindow();
+    	Stage menu = (Stage) btnTictactoe.getScene().getWindow();
         menu.close();
         try {
               AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueTaquin.fxml"));
@@ -64,8 +68,22 @@ public class controleurAccueil {
     }
 
     @FXML
-    void btnTictactoc(ActionEvent event) {
-
+    void btnTictactoe(ActionEvent event) throws Exception, MalformedURLException, NotBoundException{
+    	Stage menu = (Stage) btnTictactoe.getScene().getWindow();
+        menu.close();
+        try {
+        	Stage stage = new Stage();
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../Vues/vueTicTacToe.fxml"));
+              //AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueTicTacToe.fxml"));
+              Scene scene = new Scene(root,600,400); 
+             // Stage stage = new Stage();
+	            stage.setTitle("Jeu TicTacToe");       
+	            stage.setScene(scene);		
+	            stage.setResizable(false);
+	            stage.show();
+          } catch(Exception e) {
+              e.printStackTrace();
+          }
     }
 
 }

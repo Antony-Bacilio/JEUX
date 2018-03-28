@@ -33,11 +33,11 @@ public class controleurTicTacToe {
 	    @FXML
 	    private ImageView Cas22;
 
-	    @FXML
+	    /*@FXML
 	    void ToucheCas00(MouseEvent event) {
 	    		this.Cas00.setImage(new Image("/pic/Cercle.png"));
 
-	    }
+	    }*/
 
 	    @FXML
 	    void ToucheCas01(MouseEvent event) {

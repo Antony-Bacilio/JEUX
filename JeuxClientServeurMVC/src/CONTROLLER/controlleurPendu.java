@@ -75,10 +75,8 @@ import javafx.scene.paint.Color;
 	
 		    @FXML
 		    private Button btnM;
-	
 		    @FXML
 		    private Button btnH;
-	
 		    @FXML
 		    private Button btnZ;
 	
@@ -106,7 +104,7 @@ import javafx.scene.paint.Color;
 		    
 		    public void ControlBtn(Button B, char c) {
 		    	this.labelWarn.setText("");
-		    B.setDisable(true);
+		    	B.setDisable(true);
 		    	StringBuilder tmp = new StringBuilder(this.motDevine.getText());
 		    	boolean lettreExist = false;
 		    	if(fois!=1) {

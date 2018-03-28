@@ -18,7 +18,7 @@
          </font></Label>
       <Button fx:id="btnPendu" layoutX="46.0" layoutY="237.0" mnemonicParsing="false" onAction="#btnPendu" prefHeight="35.0" prefWidth="150.0" text="Pendu" />
       <Button fx:id="btnTaquin" layoutX="230.0" layoutY="237.0" mnemonicParsing="false" onAction="#btnTaquin" prefHeight="35.0" prefWidth="150.0" text="Taquin" />
-      <Button fx:id="btnTictactoc" layoutX="415.0" layoutY="237.0" mnemonicParsing="false" onAction="#btnTictactoc" prefHeight="35.0" prefWidth="150.0" text="Tic-Tac-Toc" />
+      <Button fx:id="btnTictactoe" layoutX="415.0" layoutY="237.0" mnemonicParsing="false" onAction="#btnTictactoe" prefHeight="35.0" prefWidth="150.0" text="Tic-Tac-Toe" />
       <Separator layoutX="26.0" layoutY="61.0" prefHeight="43.0" prefWidth="549.0" />
       <Label layoutX="180.0" layoutY="170.0" prefHeight="27.0" prefWidth="293.0" text="Choisir un Jeu pour commencer : ">
          <font>

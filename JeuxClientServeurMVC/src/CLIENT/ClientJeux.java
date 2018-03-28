@@ -19,22 +19,6 @@ public class ClientJeux extends Application{
 	@Override
 	public void start(final Stage primaryStage) throws Exception {
 		// TODO Stub de la méthode généré automatiquement
-		
-		/*try{
-		  	URL fxmlURL = getClass().getResource("/VUE/vueTaquin.fxml");
-		  	FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
-		  	Node root = fxmlLoader.load();
-		  	Scene scene = new Scene((AnchorPane) root, 600, 400);
-	   
-		    primaryStage.setScene(scene);
-		    primaryStage.setTitle("Jeu Taquin");
-		    primaryStage.setResizable(false);
-		    primaryStage.show();
-		} 
-		catch (Exception e) {
-				e.printStackTrace();
-		}*/
-		
 		try{
 		  	URL fxmlURL = getClass().getResource("/VUE/vueAccueil.fxml");
 		  	FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
@@ -58,7 +42,7 @@ public class ClientJeux extends Application{
 			modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + port+ "/Jeux");
 			System.out.println("\n\tClient conected...");
 			System.out.println("\n- La Somme  est : " + objJeux.add(9, 20) );
-			
+
 			System.out.println("\n\t\t *********** Bienvenue aux Jeux sur Serveur *************");
 			launch(argv);
 			
@@ -66,8 +50,6 @@ public class ClientJeux extends Application{
 		catch(Exception ex){
 			System.out.println("Client exception : " + ex);
 		}
-		
-		
 	}
 	
 	

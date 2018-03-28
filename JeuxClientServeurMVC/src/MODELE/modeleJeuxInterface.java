@@ -9,9 +9,10 @@ public interface modeleJeuxInterface extends Remote{
 	public double add(double a, double b) throws RemoteException;
 	
 	/*Taquin*/
-	public ArrayList taquin() throws RemoteException;
+	//public ArrayList taquin() throws RemoteException;
 	public void initTaquin(int carre[]) throws RemoteException;
 	public boolean gagnerTaquin(int[]carre) throws RemoteException;
+	public int actionMove(int move) throws RemoteException;
 
 
 }
