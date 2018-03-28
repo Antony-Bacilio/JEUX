@@ -2,7 +2,6 @@ package MODELE;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxInterface{
@@ -20,27 +19,24 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 	}
 
 
-	@SuppressWarnings("unused")
-	public void initTaquin(int []carre) throws RemoteException {
+	@SuppressWarnings("null")
+	public int[] initTaquin(int []carre) throws RemoteException {
 		// TODO Stub de la méthode généré automatiquement
-		//int taquin[] = {1,2,3,4,5,6,7,8,9};
-		//carre = taquin;
 		int N = carre.length;
+		int K = N;
+		int[] taquin = null;
+
 		for(int i=0; i<N; i++){
-			
-			carre[i]= (int) (Math.random()*N+1);
+			carre[i] = i+1;
 		}
+		for(int i=0; i<N; i++){
+			int indiceRand = (int) Math.random()*(K-1);           
+            taquin[i] = carre[indiceRand];
+            carre[indiceRand] = carre[K-1];
+            K--;
+		}
+		return taquin;
 	}
-
-
-	@Override
-	public boolean gagnerTaquin(int[]carre) throws RemoteException {
-		// TODO Stub de la méthode généré automatiquement
-		boolean gagne = false;
-		
-		return false;
-	}
-
 
 	@Override
 	public int actionMove(int mouvements) throws RemoteException {
@@ -48,5 +44,19 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		mouvements++;
 		return mouvements;
 	}
+	
+	@SuppressWarnings("unused")
+	public boolean gagnerTaquin(int[]carre) throws RemoteException {
+		// TODO Stub de la méthode généré automatiquement
+		boolean gagne = false;
+		int N = carre.length;
+		for(int i=0; i<=N; i++){
+			if(carre[i] == i+1 && carre[N] == 0) gagne = true;
+		}
+		return gagne;
+	}
+
+
+	
 
 }

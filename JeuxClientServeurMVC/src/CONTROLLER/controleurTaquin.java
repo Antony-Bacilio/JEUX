@@ -59,9 +59,8 @@ public class controleurTaquin {
     public int mouvements = 0;
     private int port = 7000;
     private modeleJeuxInterface objJeux;
-    //public modeleJeuxImpl JIMPL; 
     
-    int[] tabTaquin = {1,2,3,4,5,6,7,8,9};
+    private int[] tabTaquin = {1,2,3,4,5,6,7,8};
     
     @FXML
     void Reset(ActionEvent event) {
@@ -70,6 +69,7 @@ public class controleurTaquin {
     	btnReset.setDisable(true);
     	txtMouvement.setText("0");
     	txtMouvement.setDisable(true);
+    	
     	btn1.setDisable(true);
     	btn2.setDisable(true);
     	btn3.setDisable(true);
@@ -95,7 +95,9 @@ public class controleurTaquin {
     
     @FXML
     void Commencer(ActionEvent event) throws MalformedURLException, RemoteException, NotBoundException {
+    	
     	this.objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");/*se servir de l'interface pour obtenir des methodes*/
+    	
     	btnCommencer.setDisable(true);
     	btnReset.setDisable(false);
     	txtMouvement.setDisable(false);
@@ -109,19 +111,19 @@ public class controleurTaquin {
     	btn7.setDisable(false);
     	btn8.setDisable(false);
     	btn9.setDisable(false);
-    	int N = tabTaquin.length;
-    	for(int i=0; i<N; i++){
-    		tabTaquin[i] =(int) (Math.random()*(N-1)+1); 
-    		btn1.setText(String.valueOf(tabTaquin[i]));
-    		btn2.setText(String.valueOf(tabTaquin[i]));
-    		btn3.setText(String.valueOf(tabTaquin[i]));
-    		btn4.setText(String.valueOf(tabTaquin[i]));
+    	
+    	this.tabTaquin = this.objJeux.initTaquin(this.tabTaquin);
+
+    		btn1.setText(String.valueOf(tabTaquin[0]));
+    		btn2.setText(String.valueOf(tabTaquin[1]));
+    		btn3.setText(String.valueOf(tabTaquin[2]));
+    		btn4.setText(String.valueOf(tabTaquin[3]));
     		btn5.setText("");
-    		btn6.setText(String.valueOf(tabTaquin[i]));
-    		btn7.setText(String.valueOf(tabTaquin[i]));
-    		btn8.setText(String.valueOf(tabTaquin[i]));
-    		btn9.setText(String.valueOf(tabTaquin[i]));    		
-    	}
+    		btn6.setText(String.valueOf(tabTaquin[4]));
+    		btn7.setText(String.valueOf(tabTaquin[5]));
+    		btn8.setText(String.valueOf(tabTaquin[6]));
+    		btn9.setText(String.valueOf(tabTaquin[7]));    		
+
     }
      
     @FXML

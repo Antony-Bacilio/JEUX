@@ -2,7 +2,6 @@ package MODELE;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 
 public interface modeleJeuxInterface extends Remote{
 	
@@ -10,9 +9,10 @@ public interface modeleJeuxInterface extends Remote{
 	
 	/*Taquin*/
 	//public ArrayList taquin() throws RemoteException;
-	public void initTaquin(int carre[]) throws RemoteException;
-	public boolean gagnerTaquin(int[]carre) throws RemoteException;
+	public int[] initTaquin(int carre[]) throws RemoteException;
 	public int actionMove(int move) throws RemoteException;
+	public boolean gagnerTaquin(int[]carre) throws RemoteException;
+	
 
 
 }

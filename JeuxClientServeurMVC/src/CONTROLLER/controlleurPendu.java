@@ -1,7 +1,13 @@
 package CONTROLLER;
-	import java.net.URL;
+	import java.net.MalformedURLException;
+import java.net.URL;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.ResourceBundle;
 
+import MODELE.modelePendu;
+import MODELE.modelePenduImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -75,8 +81,10 @@ import javafx.scene.paint.Color;
 	
 		    @FXML
 		    private Button btnM;
+	
 		    @FXML
 		    private Button btnH;
+	
 		    @FXML
 		    private Button btnZ;
 	
@@ -96,15 +104,15 @@ import javafx.scene.paint.Color;
 		    @FXML
 		    private ImageView ImgPendu;
 		    
-		    private String[] tab = new String[] {"rechercher","politic","ordinateur","souris"};
-		    private String mot = this.tab[(int) (Math.random()*this.tab.length)];;
-		    private int fois = mot.length();
+		    private modelePendu mp;
+		    private String mot;
+		    private int fois ;
 		    private boolean gagne = false;
 		    
 		    
 		    public void ControlBtn(Button B, char c) {
 		    	this.labelWarn.setText("");
-		    	B.setDisable(true);
+		    B.setDisable(true);
 		    	StringBuilder tmp = new StringBuilder(this.motDevine.getText());
 		    	boolean lettreExist = false;
 		    	if(fois!=1) {
@@ -277,6 +285,22 @@ import javafx.scene.paint.Color;
 	
 			@Override
 			public void initialize(URL location, ResourceBundle resources) {
+				int port = 7000;
+				try {
+					this.mp = (modelePendu) Naming.lookup("rmi://localhost:" + port+ "/Pendu");
+				}catch(Exception ex){
+					System.out.println("Client exception : " + ex);
+				}
+
+				
+				try {
+					this.mot = this.mp.PenseMot().getMot() ;
+					this.fois = this.mp.PenseMot().getFois();
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				
 				String init = "";
 				for(int i = 0; i<mot.length();i++) {

@@ -1,9 +1,5 @@
 package CONTROLLER;
 
-import java.net.MalformedURLException;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,7 +64,7 @@ public class controleurAccueil {
     }
 
     @FXML
-    void btnTictactoe(ActionEvent event) throws Exception, MalformedURLException, NotBoundException{
+    void btnTictactoe(ActionEvent event){
     	Stage menu = (Stage) btnTictactoe.getScene().getWindow();
         menu.close();
         try {
