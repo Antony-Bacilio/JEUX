@@ -5,8 +5,6 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import CLIENT.ClientJeux;
-import MODELE.modeleJeuxImpl;
 import MODELE.modeleJeuxInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -98,7 +95,7 @@ public class controleurTaquin {
     
     @FXML
     void Commencer(ActionEvent event) throws MalformedURLException, RemoteException, NotBoundException {
-    	this.objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
+    	this.objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");/*se servir de l'interface pour obtenir des methodes*/
     	btnCommencer.setDisable(true);
     	btnReset.setDisable(false);
     	txtMouvement.setDisable(false);
@@ -125,7 +122,6 @@ public class controleurTaquin {
     		btn8.setText(String.valueOf(tabTaquin[i]));
     		btn9.setText(String.valueOf(tabTaquin[i]));    		
     	}
-    	//md.initTaquin();
     }
      
     @FXML
@@ -159,8 +155,6 @@ public class controleurTaquin {
     		if(btn2.getText()==""){
     			btn2.setText(btn1.getText());
     			btn1.setText("");
-    			
-    			
     			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
     			this.mouvements = objJeux.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
@@ -169,19 +163,16 @@ public class controleurTaquin {
     		if(btn4.getText()==""){
     			btn4.setText(btn1.getText());
     			btn1.setText("");
-    			
     			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
     			this.mouvements = objJeux.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
     		}	
     }
-
     @FXML
     void actionBtn2(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
     	if(btn1.getText()==""){
 			btn1.setText(btn2.getText());
 			btn2.setText("");
-			
 			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
@@ -189,8 +180,7 @@ public class controleurTaquin {
     	if(btn3.getText()==""){
 			btn3.setText(btn2.getText());
 			btn2.setText("");
-			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -198,7 +188,7 @@ public class controleurTaquin {
 			btn5.setText(btn2.getText());
 			btn2.setText("");
 			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -209,17 +199,14 @@ public class controleurTaquin {
     	if(btn2.getText()==""){
 			btn2.setText(btn3.getText());
 			btn3.setText("");
-			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn6.getText()==""){
 			btn6.setText(btn3.getText());
 			btn3.setText("");
-			
-			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -231,15 +218,13 @@ public class controleurTaquin {
 			btn1.setText(btn4.getText());
 			btn4.setText("");
 
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn5.getText()==""){
 			btn5.setText(btn4.getText());
 			btn4.setText("");
-			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -247,7 +232,6 @@ public class controleurTaquin {
 			btn7.setText(btn4.getText());
 			btn4.setText("");
 
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -258,8 +242,7 @@ public class controleurTaquin {
     	if(btn2.getText()==""){
 			btn2.setText(btn5.getText());
 			btn5.setText("");
-			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -267,7 +250,6 @@ public class controleurTaquin {
 			btn4.setText(btn5.getText());
 			btn5.setText("");
 			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -275,13 +257,13 @@ public class controleurTaquin {
 			btn6.setText(btn5.getText());
 			btn5.setText("");
 			
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
-			this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
+			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn8.getText()==""){
 			btn8.setText(btn5.getText());
 			btn5.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -292,7 +274,6 @@ public class controleurTaquin {
     	if(btn3.getText()==""){
 			btn3.setText(btn6.getText());
 			btn6.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
 			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
@@ -300,16 +281,14 @@ public class controleurTaquin {
 		if(btn5.getText()==""){
 			btn5.setText(btn6.getText());
 			btn6.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
-			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn9.getText()==""){
 			btn9.setText(btn6.getText());
 			btn6.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
-			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
+
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -320,14 +299,14 @@ public class controleurTaquin {
     	if(btn4.getText()==""){
 			btn4.setText(btn7.getText());
 			btn7.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn8.getText()==""){
 			btn8.setText(btn7.getText());
 			btn7.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -338,21 +317,21 @@ public class controleurTaquin {
     	if(btn5.getText()==""){
 			btn5.setText(btn8.getText());
 			btn8.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn7.getText()==""){
 			btn7.setText(btn8.getText());
 			btn8.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn9.getText()==""){
 			btn9.setText(btn8.getText());
 			btn8.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
@@ -363,14 +342,14 @@ public class controleurTaquin {
     	if(btn6.getText()==""){
 			btn6.setText(btn9.getText());
 			btn9.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn8.getText()==""){
 			btn8.setText(btn9.getText());
 			btn9.setText("");
-			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}

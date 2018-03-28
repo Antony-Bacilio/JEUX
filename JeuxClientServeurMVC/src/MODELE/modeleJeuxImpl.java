@@ -45,10 +45,8 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 	@Override
 	public int actionMove(int mouvements) throws RemoteException {
 		// TODO Stub de la méthode généré automatiquement
-		
 		mouvements++;
 		return mouvements;
-    	//this.txtMouvement.setText(String.valueOf(mouvements));
 	}
 
 }
