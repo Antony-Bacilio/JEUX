@@ -60,7 +60,8 @@ public class controleurTaquin {
     private int port = 7000;
     private modeleJeuxInterface objJeux;
     
-    private int[] tabTaquin = {1,2,3,4,5,6,7,8};
+    //public int[] tabTaquin = {1,2,3,4,5,6,7,8};
+    public int[] tabTaquin;
     
     @FXML
     void Reset(ActionEvent event) {
@@ -112,6 +113,7 @@ public class controleurTaquin {
     	btn8.setDisable(false);
     	btn9.setDisable(false);
     	
+    	tabTaquin = new int[8];
     	this.tabTaquin = this.objJeux.initTaquin(this.tabTaquin);
 
     		btn1.setText(String.valueOf(tabTaquin[0]));

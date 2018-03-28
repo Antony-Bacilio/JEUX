@@ -24,13 +24,13 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		// TODO Stub de la méthode généré automatiquement
 		int N = carre.length;
 		int K = N;
-		int[] taquin = null;
+		int[] taquin = new int[N];
 
 		for(int i=0; i<N; i++){
 			carre[i] = i+1;
 		}
 		for(int i=0; i<N; i++){
-			int indiceRand = (int) Math.random()*(K-1);           
+			int indiceRand = (int) Math.random()*K;           
             taquin[i] = carre[indiceRand];
             carre[indiceRand] = carre[K-1];
             K--;
