@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 import java.util.ResourceBundle;
 
 import MODELE.modelePenduInterface;
-import MODELE.modeleTicTacToe;
+import MODELE.modeleTicTacToeInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,7 +48,7 @@ public class controleurTicTacToe implements Initializable{
 	    @FXML
 	    private ImageView Cas22;
 	    private Image icon;
-	    private modeleTicTacToe ObjetDistanceTTT;
+	    private modeleTicTacToeInterface ObjetDistanceTTT;
 	    private int tab[] = new int [9];
 	    private int myId;
 	    @FXML
@@ -235,7 +235,7 @@ public class controleurTicTacToe implements Initializable{
 			int port = 7000;
 			
 			try {
-				this.ObjetDistanceTTT = (modeleTicTacToe) Naming.lookup("rmi://localhost:" + port+ "/Tic-Tac-Toe");
+				this.ObjetDistanceTTT = (modeleTicTacToeInterface) Naming.lookup("rmi://localhost:" + port+ "/Tic-Tac-Toe");
 				this.ObjetDistanceTTT.RejointreJeu();
 				this.myId = this.ObjetDistanceTTT.getIdJoueur();
 				

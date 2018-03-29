@@ -3,7 +3,7 @@ package MODELE;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class modeleTicTacToeImpl extends UnicastRemoteObject implements modeleTicTacToe{
+public class modeleTicTacToeImpl extends UnicastRemoteObject implements modeleTicTacToeInterface{
 	/**
 	 * 
 	 */

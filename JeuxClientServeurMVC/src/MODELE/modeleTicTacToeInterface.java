@@ -2,7 +2,7 @@ package MODELE;
 
 import java.rmi.RemoteException;
 
-public interface modeleTicTacToe extends java.rmi.Remote{
+public interface modeleTicTacToeInterface extends java.rmi.Remote{
 	public void SetEtatCase() throws RemoteException;
 	public void RejointreJeu() throws RemoteException;
 	public int getIdJoueur() throws RemoteException;
