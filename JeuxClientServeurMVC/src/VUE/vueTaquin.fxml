@@ -88,9 +88,14 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Label fx:id="lblMsg" layoutX="388.0" layoutY="382.0" prefHeight="22.0" prefWidth="178.0" textFill="#e40f0f">
+      <Label fx:id="lblMsgWin" layoutX="388.0" layoutY="382.0" prefHeight="22.0" prefWidth="178.0" textAlignment="CENTER" textFill="#e40f0f">
          <font>
-            <Font name="Consolas Bold" size="19.0" />
+            <Font name="Consolas Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMsg" layoutX="388.0" layoutY="382.0" prefHeight="22.0" prefWidth="178.0" textAlignment="RIGHT" textFill="#3409a1">
+         <font>
+            <Font name="Consolas Bold Italic" size="19.0" />
          </font>
       </Label>
    </children>

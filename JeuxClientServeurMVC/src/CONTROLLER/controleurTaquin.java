@@ -57,12 +57,14 @@ public class controleurTaquin {
     private TextArea txtMouvement;
     @FXML
     private Label lblMsg;
+    @FXML
+    private Label lblMsgWin;
     
     public int mouvements = 0;
     private int port = 7000;
     private modeleJeuxInterface objJeux;
     
-    //public int[] tabTaquin = {1,2,3,4,5,6,7,8};
+    public int[] model = {1,2,3,4,5,6,7,8};
     public int[] tabTaquin;
     
     @FXML
@@ -72,6 +74,7 @@ public class controleurTaquin {
     	btnReset.setDisable(true);
     	txtMouvement.setText("0");
     	txtMouvement.setDisable(true);
+    	lblMsg.setDisable(true);
     	
     	btn1.setDisable(true);
     	btn2.setDisable(true);
@@ -94,6 +97,8 @@ public class controleurTaquin {
     	btn9.setText("");
     	
     	this.mouvements = 0;
+    	lblMsg.setText("");
+    	lblMsgWin.setText("");
     }
     
     @FXML
@@ -128,6 +133,8 @@ public class controleurTaquin {
     		btn8.setText(String.valueOf(tabTaquin[6]));
     		btn9.setText(String.valueOf(tabTaquin[7]));    		
 
+    	lblMsg.setText("");
+    	lblMsgWin.setText("");
     }
      
     @FXML
@@ -173,7 +180,8 @@ public class controleurTaquin {
     			this.mouvements = objJeux.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
     		}
-    		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+    		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné!");
+    		else lblMsg.setText("Continuez!");;
     }
     @FXML
     void actionBtn2(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
@@ -199,7 +207,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+    	else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -218,7 +227,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+    	else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -244,7 +254,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+    	else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -277,7 +288,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-    	if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+    	else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -303,7 +315,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+		else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -322,7 +335,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+		else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -348,7 +362,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+		else lblMsg.setText("Continuez!");
     }
 
     @FXML
@@ -367,7 +382,8 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		if(this.objJeux.gagnerTaquin(tabTaquin)) lblMsg.setText("Vous avez Gagné");
+		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
+		else lblMsg.setText("Continuez!");
     }
     
 }

@@ -45,13 +45,12 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 		return mouvements;
 	}
 	
-	public boolean gagnerTaquin(int[]carre) throws RemoteException {
-		// TODO Stub de la méthode généré automatiquement
+	public boolean gagnerTaquin(int[]carre, int[]resolu) throws RemoteException {
 		boolean gagne = false;
-		int N = carre.length;
-		for(int i=0; i<N; i++){
-			if(carre[i] == i+1) gagne = true;
-			else gagne = false;
+		if(carre.length==resolu.length){
+			for(int i=0; i<carre.length; i++){
+				if(carre[i] == resolu[i]) return gagne = true;
+			}
 		}
 		return gagne;
 	}
