@@ -27,7 +27,7 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnTictactoe" layoutX="409.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnTictactoe" prefHeight="35.0" prefWidth="150.0" style="-fx-border-color: black;" text="Tic-Tac-Toe" textAlignment="CENTER">
+      <Button fx:id="btnTictactoe" layoutX="409.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnTictactoe" prefHeight="35.0" prefWidth="150.0" style="-fx-border-color: black; -fx-background-color: gray;" text="Tic-Tac-Toe" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>

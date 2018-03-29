@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class controleurAccueil {
@@ -71,8 +72,8 @@ public class controleurAccueil {
         menu.close();
         try {
         	Stage stage = new Stage();
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../Vues/vueTicTacToe.fxml"));
-              //AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueTicTacToe.fxml"));
+			// root = (BorderPane)FXMLLoader.load(getClass().getResource("../VUE/vueTicTacToe.fxml"));
+              Pane root = (Pane)FXMLLoader.load(getClass().getResource("../VUE/vueTicTacToe.fxml"));
               Scene scene = new Scene(root,600,400); 
              // Stage stage = new Stage();
 	            stage.setTitle("Jeu TicTacToe");       

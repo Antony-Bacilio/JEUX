@@ -5,6 +5,7 @@ import java.rmi.registry.LocateRegistry;
 
 import MODELE.modelePenduImpl;
 import MODELE.modeleTaquinImpl;
+import MODELE.modeleTicTacToeImpl;
 
 
 public class ServeurJeux {
@@ -17,6 +18,8 @@ public class ServeurJeux {
 			LocateRegistry.createRegistry(port);
 			Naming.rebind("rmi://localhost:"+ port + "/Pendu", new modelePenduImpl());
 			Naming.rebind("rmi://localhost:"+ port + "/Taquin", new modeleTaquinImpl());
+			Naming.rebind("rmi://localhost:"+ port + "/Tic-Tac-Toe", new modeleTicTacToeImpl());
+			
 			System.out.println("\n\tServer prêt pour commencer à Jouer!!!...");
 			
 		}

@@ -70,6 +70,8 @@ public class controleurTaquin {
     public int[] model = {1,2,3,4,5,6,7,8};
     public int[] tabTaquin;
     
+  
+    
     @FXML
     void Reset(ActionEvent event) {
     	
