@@ -48,9 +48,10 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 	public boolean gagnerTaquin(int[]carre, int[]resolu) throws RemoteException {
 		boolean gagne = false;
 		if(carre.length==resolu.length){
-			for(int i=0; i<carre.length; i++){
-				if(carre[i] == resolu[i]) return gagne = true;
-			}
+			if(carre == resolu) gagne = true;
+			/*for(int i=0; i<carre.length; i++){
+				if(carre[i] == resolu[i]) gagne = true;
+			}*/
 		}
 		return gagne;
 	}

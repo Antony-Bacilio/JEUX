@@ -13,12 +13,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class controleurTaquin {
 
+	@FXML
+    private AnchorPane fenetre;
     @FXML
     private GridPane GridPane;
     @FXML
@@ -161,10 +164,47 @@ public class controleurTaquin {
     	this.txtMouvement.setText(String.valueOf(mouvements));
     }*/
     
-    
+    @FXML
+    void evaluation(MouseEvent event) throws RemoteException {
+    		
+    		if(btn1.getText()=="") tabTaquin[0] = (Integer) null;
+    		else tabTaquin[0] = Integer.parseInt(btn1.getText());
+    		
+    		if(btn2.getText()=="") tabTaquin[1] = 0;
+    		else tabTaquin[1] = Integer.parseInt(btn2.getText());
+    		
+    		if(btn3.getText()=="") tabTaquin[2] = 0;
+    		else tabTaquin[2] = Integer.parseInt(btn3.getText());
+    		
+    		if(btn4.getText()=="") tabTaquin[3] = 0;
+    		else tabTaquin[3] = Integer.parseInt(btn4.getText());
+    		
+    		if(btn5.getText()=="") tabTaquin[4] = 0;
+    		else tabTaquin[4] = Integer.parseInt(btn5.getText());
+    		
+    		if(btn6.getText()=="") tabTaquin[5] = 0;
+    		else tabTaquin[5] = Integer.parseInt(btn6.getText());
+    		
+    		if(btn7.getText()=="") tabTaquin[6] = 0;
+    		else tabTaquin[6] = Integer.parseInt(btn7.getText());
+    		
+    		if(btn8.getText()=="") tabTaquin[7] = 0;
+    		else tabTaquin[7] = Integer.parseInt(btn8.getText());
+    		
+    		if(this.objJeux.gagnerTaquin(this.tabTaquin, this.model)) {
+    			this.lblMsgWin.setText("Vous avez Gagné!");
+    			this.lblMsg.setText("");
+    		}
+    		else {
+    			this.lblMsg.setText("Continuez!");
+    			this.lblMsgWin.setText("");
+    		}
+
+    	
+    }
     
     @FXML
-    void actionBtn1(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn1(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     		if(btn2.getText()==""){
     			btn2.setText(btn1.getText());
     			btn1.setText("");
@@ -180,11 +220,23 @@ public class controleurTaquin {
     			this.mouvements = objJeux.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
     		}
+    		evaluation(null);
+    		
+    		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+    		tabTaquin[1] = Integer.parseInt(btn2.getText());
+    		tabTaquin[2] = Integer.parseInt(btn3.getText());
+    		tabTaquin[3] = Integer.parseInt(btn4.getText());
+    		tabTaquin[4] = Integer.parseInt(btn5.getText());
+    		tabTaquin[5] = Integer.parseInt(btn6.getText());
+    		tabTaquin[6] = Integer.parseInt(btn7.getText());
+    		tabTaquin[7] = Integer.parseInt(btn8.getText());
+    		
     		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné!");
-    		else lblMsg.setText("Continuez!");;
+    		else lblMsg.setText("Continuez!");;*/
     }
+    
     @FXML
-    void actionBtn2(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn2(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     	if(btn1.getText()==""){
 			btn1.setText(btn2.getText());
 			btn2.setText("");
@@ -207,12 +259,23 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	evaluation(null);
+    	
+    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
     	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");
+    	else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
-    void actionBtn3(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn3(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     	if(btn2.getText()==""){
 			btn2.setText(btn3.getText());
 			btn3.setText("");
@@ -227,12 +290,24 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	
+    	evaluation(null);
+    	
+    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+
     	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");
+    	else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
-    void actionBtn4(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn4(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     	if(btn1.getText()==""){
 			btn1.setText(btn4.getText());
 			btn4.setText("");
@@ -254,12 +329,23 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	
+    	evaluation(null);
+    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
     	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");
+    	else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
-    void actionBtn5(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn5(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     	if(btn2.getText()==""){
 			btn2.setText(btn5.getText());
 			btn5.setText("");
@@ -288,12 +374,26 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+    	
+    	evaluation(null);
+    	
+    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
     	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");
+    	else lblMsg.setText("Continuez!");*/
+    	
+    	
     }
 
     @FXML
-    void actionBtn6(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn6(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     	if(btn3.getText()==""){
 			btn3.setText(btn6.getText());
 			btn6.setText("");
@@ -315,12 +415,23 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");
+		
+		evaluation(null);
+		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
+		if(this.objJeux.gagnerTaquin(tabTaquin, model) == true) lblMsgWin.setText("Vous avez Gagné");
+		else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
-    void actionBtn7(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException  {
+    void actionBtn7(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException  {
     	if(btn4.getText()==""){
 			btn4.setText(btn7.getText());
 			btn7.setText("");
@@ -335,12 +446,23 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		evaluation(null);
+		
+		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
 		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");
+		else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
-    void actionBtn8(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException  {
+    void actionBtn8(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException  {
     	if(btn5.getText()==""){
 			btn5.setText(btn8.getText());
 			btn8.setText("");
@@ -362,12 +484,24 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		
+		evaluation(null);
+		
+		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
 		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");
+		else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
-    void actionBtn9(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException {
+    void actionBtn9(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     	if(btn6.getText()==""){
 			btn6.setText(btn9.getText());
 			btn9.setText("");
@@ -382,8 +516,19 @@ public class controleurTaquin {
 			this.mouvements = objJeux.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
+		
+		evaluation(null);
+		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
+		tabTaquin[1] = Integer.parseInt(btn2.getText());
+		tabTaquin[2] = Integer.parseInt(btn3.getText());
+		tabTaquin[3] = Integer.parseInt(btn4.getText());
+		tabTaquin[4] = Integer.parseInt(btn5.getText());
+		tabTaquin[5] = Integer.parseInt(btn6.getText());
+		tabTaquin[6] = Integer.parseInt(btn7.getText());
+		tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
 		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");
+		else lblMsg.setText("Continuez!");*/
     }
     
 }
