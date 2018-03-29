@@ -5,7 +5,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import MODELE.modeleJeuxInterface;
+import MODELE.modeleTaquinInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,7 +65,7 @@ public class controleurTaquin {
     
     public int mouvements = 0;
     private int port = 7000;
-    private modeleJeuxInterface objJeux;
+    private modeleTaquinInterface objTaquin;
     
     public int[] model = {1,2,3,4,5,6,7,8};
     public int[] tabTaquin;
@@ -79,26 +79,16 @@ public class controleurTaquin {
     	txtMouvement.setDisable(true);
     	lblMsg.setDisable(true);
     	
-    	btn1.setDisable(true);
-    	btn2.setDisable(true);
-    	btn3.setDisable(true);
-    	btn4.setDisable(true);
-    	btn5.setDisable(true);
-    	btn6.setDisable(true);
-    	btn7.setDisable(true);
-    	btn8.setDisable(true);
-    	btn9.setDisable(true);
-    	
-    	btn1.setText("1");
-    	btn2.setText("2");
-    	btn3.setText("3");
-    	btn4.setText("4");
-    	btn5.setText("5");
-    	btn6.setText("6");
-    	btn7.setText("7");		
-    	btn8.setText("8");
-    	btn9.setText("");
-    	
+    	btn1.setDisable(true); 	btn1.setText("1");
+    	btn2.setDisable(true);	btn2.setText("2");
+    	btn3.setDisable(true);	btn3.setText("3");
+    	btn4.setDisable(true);	btn4.setText("4");
+    	btn5.setDisable(true);	btn5.setText("5");
+    	btn6.setDisable(true);	btn6.setText("6");
+    	btn7.setDisable(true);	btn7.setText("7");		
+    	btn8.setDisable(true);	btn8.setText("8");
+    	btn9.setDisable(true);	btn9.setText("");
+	
     	this.mouvements = 0;
     	lblMsg.setText("");
     	lblMsgWin.setText("");
@@ -107,7 +97,7 @@ public class controleurTaquin {
     @FXML
     void Commencer(ActionEvent event) throws MalformedURLException, RemoteException, NotBoundException {
     	
-    	this.objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");/*se servir de l'interface pour obtenir des methodes*/
+    	this.objTaquin = (modeleTaquinInterface) Naming.lookup("rmi://localhost:" + this.port + "/Taquin");/*se servir de l'interface pour obtenir des methodes*/
     	
     	btnCommencer.setDisable(true);
     	btnReset.setDisable(false);
@@ -124,7 +114,7 @@ public class controleurTaquin {
     	btn9.setDisable(false);
     	
     	tabTaquin = new int[8];
-    	this.tabTaquin = this.objJeux.initTaquin(this.tabTaquin);
+    	this.tabTaquin = this.objTaquin.initTaquin(this.tabTaquin);
 
     		btn1.setText(String.valueOf(tabTaquin[0]));
     		btn2.setText(String.valueOf(tabTaquin[1]));
@@ -163,45 +153,50 @@ public class controleurTaquin {
     	this.mouvements++;
     	this.txtMouvement.setText(String.valueOf(mouvements));
     }*/
-    
-    @FXML
-    void evaluation(MouseEvent event) throws RemoteException {
-    		
-    		if(btn1.getText()=="") tabTaquin[0] = (Integer) null;
-    		else tabTaquin[0] = Integer.parseInt(btn1.getText());
-    		
-    		if(btn2.getText()=="") tabTaquin[1] = 0;
-    		else tabTaquin[1] = Integer.parseInt(btn2.getText());
-    		
-    		if(btn3.getText()=="") tabTaquin[2] = 0;
-    		else tabTaquin[2] = Integer.parseInt(btn3.getText());
-    		
-    		if(btn4.getText()=="") tabTaquin[3] = 0;
-    		else tabTaquin[3] = Integer.parseInt(btn4.getText());
-    		
-    		if(btn5.getText()=="") tabTaquin[4] = 0;
-    		else tabTaquin[4] = Integer.parseInt(btn5.getText());
-    		
-    		if(btn6.getText()=="") tabTaquin[5] = 0;
-    		else tabTaquin[5] = Integer.parseInt(btn6.getText());
-    		
-    		if(btn7.getText()=="") tabTaquin[6] = 0;
-    		else tabTaquin[6] = Integer.parseInt(btn7.getText());
-    		
-    		if(btn8.getText()=="") tabTaquin[7] = 0;
-    		else tabTaquin[7] = Integer.parseInt(btn8.getText());
-    		
-    		if(this.objJeux.gagnerTaquin(this.tabTaquin, this.model)) {
-    			this.lblMsgWin.setText("Vous avez Gagné!");
-    			this.lblMsg.setText("");
-    		}
-    		else {
-    			this.lblMsg.setText("Continuez!");
-    			this.lblMsgWin.setText("");
-    		}
-
-    	
-    }
+   
+    void eval() throws RemoteException {
+		
+		if(btn1.getText()=="") tabTaquin[0] = -1;
+		else tabTaquin[0] = Integer.parseInt(btn1.getText());
+		
+		if(btn2.getText()=="") tabTaquin[1] = -1;
+		else tabTaquin[1] = Integer.parseInt(btn2.getText());
+		
+		if(btn3.getText()=="") tabTaquin[2] = -1;
+		else tabTaquin[2] = Integer.parseInt(btn3.getText());
+		
+		if(btn4.getText()=="") tabTaquin[3] = -1;
+		else tabTaquin[3] = Integer.parseInt(btn4.getText());
+		
+		if(btn5.getText()=="") tabTaquin[4] = -1;
+		else tabTaquin[4] = Integer.parseInt(btn5.getText());
+		
+		if(btn6.getText()=="") tabTaquin[5] = -1;
+		else tabTaquin[5] = Integer.parseInt(btn6.getText());
+		
+		if(btn7.getText()=="") tabTaquin[6] = -1;
+		else tabTaquin[6] = Integer.parseInt(btn7.getText());
+		
+		if(btn8.getText()=="") tabTaquin[7] = -1;
+		else tabTaquin[7] = Integer.parseInt(btn8.getText());
+		
+		for(int i=0; i<tabTaquin.length; i++){
+			System.out.println(tabTaquin[i] + "; ");
+		}
+		System.out.println("\n");
+		
+		if(this.objTaquin.gagnerTaquin(this.tabTaquin, this.model)) {
+			System.out.println("Vous avez fini!, Felicitations!! ");
+			this.lblMsgWin.setText("Vous avez Gagné!");
+			this.lblMsg.setText("");
+			//this.btnCommencer.setDisable(false);
+		}
+		else {
+			this.lblMsg.setText("Continuez!");
+			this.lblMsgWin.setText("");
+		}
+	
+}
     
     @FXML
     void actionBtn1(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
@@ -209,7 +204,7 @@ public class controleurTaquin {
     			btn2.setText(btn1.getText());
     			btn1.setText("");
     			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
-    			this.mouvements = objJeux.actionMove(this.mouvements);
+    			this.mouvements = objTaquin.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
     			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
     		}
@@ -217,10 +212,11 @@ public class controleurTaquin {
     			btn4.setText(btn1.getText());
     			btn1.setText("");
     			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
-    			this.mouvements = objJeux.actionMove(this.mouvements);
+    			this.mouvements = objTaquin.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
     		}
-    		evaluation(null);
+    		//evaluation(null);
+    		eval();
     		
     		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
     		tabTaquin[1] = Integer.parseInt(btn2.getText());
@@ -241,25 +237,26 @@ public class controleurTaquin {
 			btn1.setText(btn2.getText());
 			btn2.setText("");
 			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn3.getText()==""){
 			btn3.setText(btn2.getText());
 			btn2.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn5.getText()==""){
 			btn5.setText(btn2.getText());
 			btn2.setText("");
 			
-			modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			//modeleTaquinInterface objJeux = (modeleTaquinInterface) Naming.lookup("rmi://localhost:" + 7000 + "/Jeux");
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-    	evaluation(null);
+    	//evaluation(null);
+    	eval();
     	
     	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
@@ -280,18 +277,19 @@ public class controleurTaquin {
 			btn2.setText(btn3.getText());
 			btn3.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn6.getText()==""){
 			btn6.setText(btn3.getText());
 			btn3.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	
-    	evaluation(null);
+    	//evaluation(null);
+    	eval();
     	
     	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
@@ -312,25 +310,26 @@ public class controleurTaquin {
 			btn1.setText(btn4.getText());
 			btn4.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn5.getText()==""){
 			btn5.setText(btn4.getText());
 			btn4.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn7.getText()==""){
 			btn7.setText(btn4.getText());
 			btn4.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	
-    	evaluation(null);
+    	//evaluation(null);
+    	eval();
     	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
 		tabTaquin[2] = Integer.parseInt(btn3.getText());
@@ -350,32 +349,33 @@ public class controleurTaquin {
 			btn2.setText(btn5.getText());
 			btn5.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn4.getText()==""){
 			btn4.setText(btn5.getText());
 			btn5.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn6.getText()==""){
 			btn6.setText(btn5.getText());
 			btn5.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	if(btn8.getText()==""){
 			btn8.setText(btn5.getText());
 			btn5.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	
-    	evaluation(null);
+    	//evaluation(null);
+    	eval();
     	
     	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
@@ -398,25 +398,26 @@ public class controleurTaquin {
 			btn3.setText(btn6.getText());
 			btn6.setText("");
 			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn5.getText()==""){
 			btn5.setText(btn6.getText());
 			btn6.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn9.getText()==""){
 			btn9.setText(btn6.getText());
 			btn6.setText("");
 
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		
-		evaluation(null);
+		//evaluation(null);
+		eval();
 		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
 		tabTaquin[2] = Integer.parseInt(btn3.getText());
@@ -436,17 +437,18 @@ public class controleurTaquin {
 			btn4.setText(btn7.getText());
 			btn7.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn8.getText()==""){
 			btn8.setText(btn7.getText());
 			btn7.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		evaluation(null);
+		//evaluation(null);
+		eval();
 		
 		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
@@ -467,25 +469,26 @@ public class controleurTaquin {
 			btn5.setText(btn8.getText());
 			btn8.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn7.getText()==""){
 			btn7.setText(btn8.getText());
 			btn8.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn9.getText()==""){
 			btn9.setText(btn8.getText());
 			btn8.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		
-		evaluation(null);
+		//evaluation(null);
+		eval();
 		
 		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
@@ -506,18 +509,19 @@ public class controleurTaquin {
 			btn6.setText(btn9.getText());
 			btn9.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		if(btn8.getText()==""){
 			btn8.setText(btn9.getText());
 			btn9.setText("");
 			
-			this.mouvements = objJeux.actionMove(this.mouvements);
+			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		
-		evaluation(null);
+		//evaluation(null);
+		eval();
 		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
 		tabTaquin[1] = Integer.parseInt(btn2.getText());
 		tabTaquin[2] = Integer.parseInt(btn3.getText());

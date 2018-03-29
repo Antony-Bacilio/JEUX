@@ -4,7 +4,7 @@ import java.net.URL;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 
-import MODELE.modeleJeuxInterface;
+import MODELE.modeleTaquinInterface;
 
 //import java.rmi.Naming;
 import javafx.scene.*;
@@ -37,19 +37,19 @@ public class ClientJeux extends Application{
 	
 	/*Connexion vers Serveur*/
 	public static void main(String[] argv) throws RemoteException{
-		try{
-			int port = 7000;
-			modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + port+ "/Jeux");
+		//try{
+			//int port = 7000;
+			//modeleTaquinInterface objJeux = (modeleTaquinInterface) Naming.lookup("rmi://localhost:" + port+ "/Jeux");
 			System.out.println("\n\tClient conected...");
-			System.out.println("\n- La Somme  est : " + objJeux.add(9, 20) );
+			//System.out.println("\n- La Somme  est : " + objJeux.add(9, 20) );
 
 			System.out.println("\n\t\t *********** Bienvenue aux Jeux sur Serveur *************");
 			launch(argv);
 			
-		}
-		catch(Exception ex){
-			System.out.println("Client exception : " + ex);
-		}
+		//}
+		//catch(Exception ex){
+			//System.out.println("Client exception : " + ex);
+		//}
 	}
 	
 	

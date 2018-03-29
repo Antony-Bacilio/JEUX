@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.controlleurPendu">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="633.0" style="-fx-background-color: red; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.controlleurPendu">
    <children>
       <GridPane layoutX="269.0" layoutY="14.0" prefHeight="197.0" prefWidth="338.0">
         <columnConstraints>
@@ -30,47 +29,146 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnR" mnemonicParsing="false" onAction="#ToucheR" prefHeight="86.0" prefWidth="98.0" text="R" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button fx:id="btnB" mnemonicParsing="false" onAction="#ToucheB" prefHeight="54.0" prefWidth="94.0" text="B" GridPane.columnIndex="1" />
-            <Button fx:id="btnC" mnemonicParsing="false" onAction="#ToucheC" prefHeight="86.0" prefWidth="98.0" text="C" GridPane.columnIndex="2" />
-            <Button fx:id="btnD" mnemonicParsing="false" onAction="#ToucheD" prefHeight="86.0" prefWidth="98.0" text="D" GridPane.columnIndex="3" />
-            <Button fx:id="btnG" mnemonicParsing="false" onAction="#ToucheG" prefHeight="86.0" prefWidth="98.0" text="G" GridPane.rowIndex="1" />
-            <Button fx:id="btnE" mnemonicParsing="false" onAction="#ToucheE" prefHeight="86.0" prefWidth="98.0" text="E" GridPane.columnIndex="4" />
-            <Button fx:id="btnL" mnemonicParsing="false" onAction="#ToucheL" prefHeight="86.0" prefWidth="98.0" text="L" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button fx:id="btnW" mnemonicParsing="false" onAction="#ToucheW" prefHeight="86.0" prefWidth="98.0" text="W" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Button fx:id="btnV" mnemonicParsing="false" onAction="#ToucheV" prefHeight="86.0" prefWidth="98.0" text="V" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button fx:id="btnU" mnemonicParsing="false" onAction="#ToucheU" prefHeight="86.0" prefWidth="98.0" text="U" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="btnT" mnemonicParsing="false" onAction="#ToucheT" prefHeight="86.0" prefWidth="98.0" text="T" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="btnS" mnemonicParsing="false" onAction="#ToucheS" prefHeight="86.0" prefWidth="98.0" text="S" GridPane.rowIndex="3" />
-            <Button fx:id="btnF" mnemonicParsing="false" onAction="#ToucheF" prefHeight="86.0" prefWidth="98.0" text="F" GridPane.columnIndex="5" />
-            <Button fx:id="btnQ" mnemonicParsing="false" onAction="#ToucheQ" prefHeight="86.0" prefWidth="98.0" text="Q" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button fx:id="btnK" mnemonicParsing="false" onAction="#ToucheK" prefHeight="86.0" prefWidth="98.0" text="K" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button fx:id="btnP" mnemonicParsing="false" onAction="#ToucheP" prefHeight="86.0" prefWidth="98.0" text="P" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button fx:id="btnJ" mnemonicParsing="false" onAction="#ToucheJ" prefHeight="86.0" prefWidth="98.0" text="J" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="btnO" mnemonicParsing="false" onAction="#ToucheO" prefHeight="86.0" prefWidth="98.0" text="O" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="btnI" mnemonicParsing="false" onAction="#ToucheI" prefHeight="86.0" prefWidth="98.0" text="I" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="btnN" mnemonicParsing="false" onAction="#ToucheN" prefHeight="86.0" prefWidth="98.0" text="N" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="btnM" mnemonicParsing="false" onAction="#ToucheM" prefHeight="86.0" prefWidth="98.0" text="M" GridPane.rowIndex="2" />
-            <Button fx:id="btnH" mnemonicParsing="false" onAction="#ToucheH" prefHeight="86.0" prefWidth="98.0" text="H" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="btnZ" mnemonicParsing="false" onAction="#ToucheZ" prefHeight="86.0" prefWidth="98.0" text="Z" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Button fx:id="btnY" mnemonicParsing="false" onAction="#ToucheY" prefHeight="86.0" prefWidth="98.0" text="Y" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button fx:id="btnX" mnemonicParsing="false" onAction="#ToucheX" prefHeight="86.0" prefWidth="98.0" text="X" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Button fx:id="btnA" mnemonicParsing="false" onAction="#ToucheA" prefHeight="41.0" prefWidth="68.0" text="A" />
+            <Button fx:id="btnR" disable="true" mnemonicParsing="false" onAction="#ToucheR" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="R" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnB" disable="true" mnemonicParsing="false" onAction="#ToucheB" prefHeight="54.0" prefWidth="94.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="B" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnC" disable="true" mnemonicParsing="false" onAction="#ToucheC" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="C" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnD" disable="true" mnemonicParsing="false" onAction="#ToucheD" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="D" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnG" disable="true" mnemonicParsing="false" onAction="#ToucheG" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="G" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnE" disable="true" mnemonicParsing="false" onAction="#ToucheE" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="E" GridPane.columnIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnL" disable="true" mnemonicParsing="false" onAction="#ToucheL" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="L" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnW" disable="true" mnemonicParsing="false" onAction="#ToucheW" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="W" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnV" disable="true" mnemonicParsing="false" onAction="#ToucheV" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="V" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnU" disable="true" mnemonicParsing="false" onAction="#ToucheU" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="U" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnT" disable="true" mnemonicParsing="false" onAction="#ToucheT" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="T" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnS" disable="true" mnemonicParsing="false" onAction="#ToucheS" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="S" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnF" disable="true" mnemonicParsing="false" onAction="#ToucheF" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="F" GridPane.columnIndex="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnQ" disable="true" mnemonicParsing="false" onAction="#ToucheQ" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="Q" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnK" disable="true" mnemonicParsing="false" onAction="#ToucheK" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="K" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnP" disable="true" mnemonicParsing="false" onAction="#ToucheP" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="P" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnJ" disable="true" mnemonicParsing="false" onAction="#ToucheJ" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="J" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnO" disable="true" mnemonicParsing="false" onAction="#ToucheO" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="O" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnI" disable="true" mnemonicParsing="false" onAction="#ToucheI" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="I" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnN" disable="true" mnemonicParsing="false" onAction="#ToucheN" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="N" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnM" disable="true" mnemonicParsing="false" onAction="#ToucheM" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="M" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnH" disable="true" mnemonicParsing="false" onAction="#ToucheH" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="H" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnZ" disable="true" mnemonicParsing="false" onAction="#ToucheZ" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="Z" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnY" disable="true" mnemonicParsing="false" onAction="#ToucheY" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="Y" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnX" disable="true" mnemonicParsing="false" onAction="#ToucheX" prefHeight="86.0" prefWidth="98.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="X" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnA" disable="true" mnemonicParsing="false" onAction="#ToucheA" prefHeight="41.0" prefWidth="68.0" style="-fx-background-color: yellow; -fx-background-color: orange; -fx-border-color: black;" text="A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
          </children>
       </GridPane>
-      <Label fx:id="motDevine" alignment="CENTER" layoutX="258.0" layoutY="250.0" prefHeight="17.0" prefWidth="360.0">
+      <Label fx:id="motDevine" alignment="CENTER" layoutX="268.0" layoutY="244.0" prefHeight="53.0" prefWidth="353.0">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="labelWarn" layoutX="258.0" layoutY="362.0" prefHeight="0.0" prefWidth="338.0" textFill="#f50707">
+      <Label fx:id="labelWarn" layoutX="247.0" layoutY="302.0" prefHeight="53.0" prefWidth="374.0" textFill="#4208d3">
          <font>
-            <Font size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Label>
-      <ImageView fx:id="ImgPendu" fitHeight="224.0" fitWidth="200.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ImgPendu" fitHeight="224.0" fitWidth="200.0" layoutX="28.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnCommencer" layoutX="47.0" layoutY="304.0" mnemonicParsing="false" onAction="#Commencer" prefHeight="33.0" prefWidth="161.0" style="-fx-border-color: black;" text="Commencer!">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReset" disable="true" layoutX="140.0" layoutY="256.0" mnemonicParsing="false" onAction="#Reset" prefHeight="31.0" prefWidth="105.0" style="-fx-border-color: black;" text="Reset">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="269.0" layoutY="223.0" text="Le mot est :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnExit" layoutX="22.0" layoutY="255.0" mnemonicParsing="false" onAction="#Exit" prefHeight="33.0" prefWidth="105.0" style="-fx-border-color: black;" text="Exit">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

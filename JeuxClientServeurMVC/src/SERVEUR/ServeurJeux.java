@@ -3,7 +3,8 @@ package SERVEUR;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
-import MODELE.modeleJeuxImpl;
+import MODELE.modelePenduImpl;
+import MODELE.modeleTaquinImpl;
 
 
 public class ServeurJeux {
@@ -14,7 +15,8 @@ public class ServeurJeux {
 		try{
 			int port = 7000;
 			LocateRegistry.createRegistry(port);
-			Naming.rebind("rmi://localhost:"+ port + "/Jeux", new modeleJeuxImpl());
+			Naming.rebind("rmi://localhost:"+ port + "/Pendu", new modelePenduImpl());
+			Naming.rebind("rmi://localhost:"+ port + "/Taquin", new modeleTaquinImpl());
 			System.out.println("\n\tServer prêt pour commencer à Jouer!!!...");
 			
 		}

@@ -5,13 +5,12 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Random;
 
 @SuppressWarnings("serial")
-public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxInterface{
+public class modeleTaquinImpl  extends UnicastRemoteObject implements modeleTaquinInterface{
 
-	public modeleJeuxImpl() throws RemoteException {
+	public modeleTaquinImpl() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 
 	@Override
 	public double add(double a, double b) throws RemoteException {
@@ -46,12 +45,13 @@ public class modeleJeuxImpl  extends UnicastRemoteObject implements modeleJeuxIn
 	}
 	
 	public boolean gagnerTaquin(int[]carre, int[]resolu) throws RemoteException {
-		boolean gagne = false;
+		boolean gagne = true;
 		if(carre.length==resolu.length){
-			if(carre == resolu) gagne = true;
-			/*for(int i=0; i<carre.length; i++){
-				if(carre[i] == resolu[i]) gagne = true;
-			}*/
+			//if(carre[0] == resolu[0] && carre[1] == resolu[1] & carre[2] == resolu[2]) gagne = true;
+
+			for(int i=0; i<carre.length-2; i++){
+				if(carre[i] != resolu[i]) gagne = false;
+			}
 		}
 		return gagne;
 	}

@@ -19,11 +19,11 @@
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Label>
-      <Button fx:id="btnPendu" cache="true" graphicTextGap="3.0" layoutX="40.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnPendu" prefHeight="35.0" prefWidth="150.0" style="-fx-border-color: black;" text="Pendu" textAlignment="CENTER">
+      <Button fx:id="btnPendu" cache="true" graphicTextGap="3.0" layoutX="40.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnPendu" prefHeight="35.0" prefWidth="150.0" style="-fx-border-color: black; -fx-background-color: orange;" text="Pendu" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button fx:id="btnTaquin" layoutX="226.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnTaquin" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: green; -fx-border-color: black;" text="Taquin" textAlignment="CENTER">
+      <Button fx:id="btnTaquin" layoutX="226.0" layoutY="266.0" mnemonicParsing="false" onAction="#btnTaquin" opacity="0.96" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: green; -fx-border-color: black;" text="Taquin" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
