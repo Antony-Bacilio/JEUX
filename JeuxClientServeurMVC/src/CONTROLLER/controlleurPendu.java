@@ -17,88 +17,65 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 	public class controlleurPendu implements Initializable {
-		 @FXML
+			@FXML
+			private GridPane GridTab;
+			@FXML
 		    private Button btnR;
-	
 		    @FXML
 		    private Button btnB;
-	
 		    @FXML
 		    private Button btnC;
-	
 		    @FXML
 		    private Button btnD;
-	
 		    @FXML
 		    private Button btnG;
-	
 		    @FXML
 		    private Button btnE;
-	
 		    @FXML
 		    private Button btnL;
-	
 		    @FXML
 		    private Button btnW;
-	
 		    @FXML
 		    private Button btnV;
-	
 		    @FXML
 		    private Button btnU;
-	
 		    @FXML
 		    private Button btnT;
-	
 		    @FXML
 		    private Button btnS;
-	
 		    @FXML
 		    private Button btnF;
-	
 		    @FXML
 		    private Button btnQ;
-	
 		    @FXML
 		    private Button btnK;
-	
 		    @FXML
 		    private Button btnP;
-	
 		    @FXML
 		    private Button btnJ;
-	
 		    @FXML
 		    private Button btnO;
-	
 		    @FXML
 		    private Button btnI;
-	
 		    @FXML
 		    private Button btnN;
-	
 		    @FXML
 		    private Button btnM;
-	
 		    @FXML
 		    private Button btnH;
-	
 		    @FXML
 		    private Button btnZ;
-	
 		    @FXML
 		    private Button btnY;
-	
 		    @FXML
 		    private Button btnX;
-	
 		    @FXML
 		    private Button btnA;
-	
 		    @FXML
 		    private Label motDevine;
 		    @FXML
@@ -107,13 +84,14 @@ import javafx.stage.Stage;
 		    private ImageView ImgPendu;
 		    @FXML
 		    private Button btnCommencer;
-
 		    @FXML
 		    private Button btnReset;
-
 		    @FXML
 		    private Button btnExit;
+		    @FXML
+		    private Button btnRejouer;
 
+		    
 		    private modelePenduInterface mp;
 		    private String mot;
 		    private int fois ;
@@ -136,6 +114,7 @@ import javafx.stage.Stage;
 		    	btnL.setDisable(false); btnZ.setDisable(false);
 		    	btnM.setDisable(false);
 		    	btnN.setDisable(false);
+		    	//this.GridTab.setDisable(false);
 		    	
 		    	btnCommencer.setDisable(true);
 		    	btnReset.setDisable(false);
@@ -144,8 +123,11 @@ import javafx.stage.Stage;
 	    		if(fois<=7) {
 	    			this.ImgPendu.setImage(new Image("/pic/p" + fois + ".png")); 
 	    		}
+	    		
+	    		this.btnRejouer.setVisible(false);
 		    }
 
+		    /*Selectionner un Autre mot*/
 		    @FXML
 		    void Reset(ActionEvent event) throws RemoteException {
 		    	btnA.setDisable(true); btnO.setDisable(true);
@@ -162,6 +144,7 @@ import javafx.stage.Stage;
 		    	btnL.setDisable(true); btnZ.setDisable(true);
 		    	btnM.setDisable(true);
 		    	btnN.setDisable(true);
+		    	//this.GridTab.setDisable(true);
 		    	
 		    	btnReset.setDisable(true);
 		    	btnCommencer.setDisable(false);
@@ -169,20 +152,16 @@ import javafx.stage.Stage;
 		    	
 		    	this.labelWarn.setText("");
 		    	this.motDevine.setText("");
-		    	
-		    	//try {
-					this.mot = this.mp.PenseMot().getMot() ;
-					this.fois = this.mp.PenseMot().getFois();
-				//} catch (RemoteException e) {
-					// TODO Auto-generated catch block
-					//e.printStackTrace();
-				//}
-				
+				this.mot = this.mp.PenseMot().getMot() ;
+				this.fois = this.mp.PenseMot().getFois();
+
 				String init = "";
 				for(int i = 0; i<mot.length();i++) {
 					init += "_";
 				}
 				this.motDevine.setText(init);
+				
+				this.btnRejouer.setVisible(false);
 		    }
 		    
 		    @FXML
@@ -202,6 +181,25 @@ import javafx.stage.Stage;
 		        }
 		    }
 		    
+		    @FXML
+		    void Rejouer(ActionEvent event) {
+		    	Stage menu = (Stage) btnCommencer.getScene().getWindow();
+		        menu.close();
+		    	try {
+		            AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vuePendu.fxml"));
+		            Scene scene = new Scene(root,600,400); 
+		            Stage stage = new Stage();
+			            stage.setTitle("Accueil");       
+			            stage.setScene(scene);		
+			            stage.setResizable(false);
+			            stage.show();
+		        } catch(Exception e) {
+		            e.printStackTrace();
+		        }
+		    	this.btnRejouer.setVisible(false);
+		    }
+		    
+		    /*Evaluation de boutons*/
 		    public void ControlBtn(Button B, char c) {
 		    	this.labelWarn.setText("");
 		    	B.setDisable(true);
@@ -246,7 +244,11 @@ import javafx.stage.Stage;
 			    	btnL.setDisable(true); btnZ.setDisable(true);
 			    	btnM.setDisable(true);
 			    	btnN.setDisable(true);
+			    	
+			    	//this.GridTab.setDisable(true);
 			    	ImgPendu.setImage(null);
+			    	
+			    	System.out.println("Vous avez perdu!, Domage!! ");
 		    		
 		    		
 		    	}
@@ -254,6 +256,7 @@ import javafx.stage.Stage;
 		    	if(!tmp.toString().contains("_")) {
 		    		this.gagne = true;
 		    		this.labelWarn.setText("Felicitations, Vous avez gagné!");
+		    		
 		    		btnA.setDisable(true); btnO.setDisable(true);
 			    	btnB.setDisable(true); btnP.setDisable(true);
 			    	btnC.setDisable(true); btnQ.setDisable(true);
@@ -268,8 +271,11 @@ import javafx.stage.Stage;
 			    	btnL.setDisable(true); btnZ.setDisable(true);
 			    	btnM.setDisable(true);
 			    	btnN.setDisable(true);
+			    	//this.GridTab.setDisable(true);
+			    	this.btnRejouer.setVisible(true);
 			    	
 			    	this.btnReset.setDisable(true);;
+			    	System.out.println("Vous avez gagné!, Felicitations!! ");
 		    	}
 		    	
 		    }

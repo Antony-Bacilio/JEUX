@@ -49,7 +49,7 @@ public class modeleTaquinImpl  extends UnicastRemoteObject implements modeleTaqu
 		if(carre.length==resolu.length){
 			//if(carre[0] == resolu[0] && carre[1] == resolu[1] & carre[2] == resolu[2]) gagne = true;
 
-			for(int i=0; i<carre.length-2; i++){
+			for(int i=0; i<carre.length-5; i++){
 				if(carre[i] != resolu[i]) gagne = false;
 			}
 		}

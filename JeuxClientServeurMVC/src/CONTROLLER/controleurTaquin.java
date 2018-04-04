@@ -104,6 +104,7 @@ public class controleurTaquin {
     	btnCommencer.setDisable(true);
     	btnReset.setDisable(false);
     	txtMouvement.setDisable(false);
+    	this.GridPane.setDisable(false);
     	
     	btn1.setDisable(false);
     	btn2.setDisable(false);
@@ -187,10 +188,11 @@ public class controleurTaquin {
 			System.out.println("Vous avez fini!, Felicitations!! ");
 			this.lblMsgWin.setText("Vous avez Gagné!");
 			this.lblMsg.setText("");
+			this.GridPane.setDisable(true);
 			//this.btnCommencer.setDisable(false);
 		}
 		else {
-			this.lblMsg.setText("Continuez!");
+			this.lblMsg.setText("Courage, Continuez!");
 			this.lblMsgWin.setText("");
 		}
 	

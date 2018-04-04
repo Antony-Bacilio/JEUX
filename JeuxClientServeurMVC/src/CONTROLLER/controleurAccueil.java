@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -33,6 +34,7 @@ public class controleurAccueil {
               AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vuePendu.fxml"));
               Scene scene = new Scene(root,600,400); 
               Stage stage = new Stage();
+              		//stage.getIcons().add(new Image("../pic/UL.jpg"));
 		            stage.setTitle("Jeu Pendu");       
 		            stage.setScene(scene);		
 		            stage.setResizable(false);

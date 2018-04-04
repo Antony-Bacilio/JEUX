@@ -8,6 +8,7 @@ import MODELE.modeleTaquinInterface;
 
 //import java.rmi.Naming;
 import javafx.scene.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.application.Application;
@@ -25,10 +26,12 @@ public class ClientJeux extends Application{
 		  	Node root = fxmlLoader.load();
 		  	Scene scene = new Scene((AnchorPane) root, 600, 400);
 	   
+		  	primaryStage.getIcons().add(new Image("https://example.com/javaicon.png"));
 		    primaryStage.setScene(scene);
 		    primaryStage.setTitle("Jeux en ligne\n");
 		    primaryStage.setResizable(false);
 		    primaryStage.show();
+		   
 		} 
 		catch (Exception e) {
 				e.printStackTrace();
