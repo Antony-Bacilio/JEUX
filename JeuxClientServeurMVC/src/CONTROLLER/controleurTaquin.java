@@ -63,16 +63,16 @@ public class controleurTaquin {
     @FXML
     private Label lblMsgWin;
     
-    public int mouvements = 0;
+    public int mouvements = 0;   				//Compteur de chaque mouvement
     private int port = 7000;
-    private modeleTaquinInterface objTaquin;
+    private modeleTaquinInterface objTaquin;	//Appel à l'interface
     
-    public int[] model = {1,2,3,4,5,6,7,8};
-    public int[] tabTaquin;
+    public int[] model = {1,2,3,4,5,6,7,8};		//Tableau avec le bon ordre
+    public int[] tabTaquin;						//Tableau testeur
     
   
-    
-    @FXML
+    /*Boutons complementaires*/
+    @FXML /*Bouton Reset (Rejouer)*/
     void Reset(ActionEvent event) {
     	
     	btnCommencer.setDisable(false);
@@ -149,13 +149,9 @@ public class controleurTaquin {
         }
     	//System.exit(1);
     }
-    
-    /*@FXML
-    void actionMove() {
-    	this.mouvements++;
-    	this.txtMouvement.setText(String.valueOf(mouvements));
-    }*/
    
+    
+    /*Evaluation des cases, s'ils ont le bon ordre*/
     void eval() throws RemoteException {
 		
 		if(btn1.getText()=="") tabTaquin[0] = -1;
@@ -200,6 +196,8 @@ public class controleurTaquin {
 	
 }
     
+    
+    /*Actions pour chaque bouton (case)*/
     @FXML
     void actionBtn1(ActionEvent event) throws RemoteException, MalformedURLException, NotBoundException, NumberFormatException {
     		if(btn2.getText()==""){
@@ -208,7 +206,7 @@ public class controleurTaquin {
     			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
     			this.mouvements = objTaquin.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
-    			//this.txtMouvement.setText(String.valueOf(objJeux.actionMove(this.mouvements)));
+   
     		}
     		if(btn4.getText()==""){
     			btn4.setText(btn1.getText());
@@ -217,20 +215,9 @@ public class controleurTaquin {
     			this.mouvements = objTaquin.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
     		}
-    		//evaluation(null);
+    		
     		eval();
     		
-    		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-    		tabTaquin[1] = Integer.parseInt(btn2.getText());
-    		tabTaquin[2] = Integer.parseInt(btn3.getText());
-    		tabTaquin[3] = Integer.parseInt(btn4.getText());
-    		tabTaquin[4] = Integer.parseInt(btn5.getText());
-    		tabTaquin[5] = Integer.parseInt(btn6.getText());
-    		tabTaquin[6] = Integer.parseInt(btn7.getText());
-    		tabTaquin[7] = Integer.parseInt(btn8.getText());
-    		
-    		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné!");
-    		else lblMsg.setText("Continuez!");;*/
     }
     
     @FXML
@@ -257,20 +244,9 @@ public class controleurTaquin {
 			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-    	//evaluation(null);
+
     	eval();
     	
-    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
@@ -290,20 +266,7 @@ public class controleurTaquin {
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	
-    	//evaluation(null);
     	eval();
-    	
-    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-
-    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
@@ -330,19 +293,8 @@ public class controleurTaquin {
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	
-    	//evaluation(null);
     	eval();
-    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");*/
+
     }
 
     @FXML
@@ -376,21 +328,7 @@ public class controleurTaquin {
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
     	
-    	//evaluation(null);
     	eval();
-    	
-    	/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-    	if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-    	else lblMsg.setText("Continuez!");*/
-    	
     	
     }
 
@@ -418,19 +356,8 @@ public class controleurTaquin {
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		
-		//evaluation(null);
 		eval();
-		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-		if(this.objJeux.gagnerTaquin(tabTaquin, model) == true) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");*/
+
     }
 
     @FXML
@@ -449,20 +376,9 @@ public class controleurTaquin {
 			this.mouvements = objTaquin.actionMove(this.mouvements);
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
-		//evaluation(null);
+		
 		eval();
-		
-		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");*/
+
     }
 
     @FXML
@@ -489,20 +405,8 @@ public class controleurTaquin {
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		
-		//evaluation(null);
 		eval();
 		
-		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");*/
     }
 
     @FXML
@@ -522,19 +426,8 @@ public class controleurTaquin {
 			this.txtMouvement.setText(String.valueOf(mouvements));
 		}
 		
-		//evaluation(null);
 		eval();
-		/*tabTaquin[0] = Integer.parseInt(btn1.getText());
-		tabTaquin[1] = Integer.parseInt(btn2.getText());
-		tabTaquin[2] = Integer.parseInt(btn3.getText());
-		tabTaquin[3] = Integer.parseInt(btn4.getText());
-		tabTaquin[4] = Integer.parseInt(btn5.getText());
-		tabTaquin[5] = Integer.parseInt(btn6.getText());
-		tabTaquin[6] = Integer.parseInt(btn7.getText());
-		tabTaquin[7] = Integer.parseInt(btn8.getText());
-		
-		if(this.objJeux.gagnerTaquin(tabTaquin, model)) lblMsgWin.setText("Vous avez Gagné");
-		else lblMsg.setText("Continuez!");*/
+
     }
     
 }

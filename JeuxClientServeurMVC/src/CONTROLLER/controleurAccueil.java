@@ -15,16 +15,12 @@ public class controleurAccueil {
 
 	@FXML
     private Label lblTitle;
-
     @FXML
     private Label lblBienvenue;
-
     @FXML
     private Button btnPendu;
-
     @FXML
     private Button btnTaquin;
-
     @FXML
     private Button btnTictactoe;
 
@@ -37,10 +33,10 @@ public class controleurAccueil {
               AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vuePendu.fxml"));
               Scene scene = new Scene(root,600,400); 
               Stage stage = new Stage();
-	            stage.setTitle("Jeu Pendu");       
-	            stage.setScene(scene);		
-	            stage.setResizable(false);
-	            stage.show();
+		            stage.setTitle("Jeu Pendu");       
+		            stage.setScene(scene);		
+		            stage.setResizable(false);
+		            stage.show();
 	            System.out.println("\n\t- Jeu Pendu");
           } catch(Exception e) {
               e.printStackTrace();
@@ -55,11 +51,11 @@ public class controleurAccueil {
               AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("../VUE/vueTaquin.fxml"));
               Scene scene = new Scene(root,600,400); 
               Stage stage = new Stage();
-	            stage.setTitle("Jeu Taquin");       
-	            stage.setScene(scene);		
-	            stage.setResizable(false);
-	            stage.show();
-	            System.out.println("\n\t- Jeu Taquin");
+		            stage.setTitle("Jeu Taquin");       
+		            stage.setScene(scene);		
+		            stage.setResizable(false);
+		            stage.show();
+		            System.out.println("\n\t- Jeu Taquin");
           } catch(Exception e) {
               e.printStackTrace();
           }
