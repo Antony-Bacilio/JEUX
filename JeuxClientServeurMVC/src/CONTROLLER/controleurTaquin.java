@@ -205,7 +205,7 @@ public class controleurTaquin {
     		if(btn2.getText()==""){
     			btn2.setText(btn1.getText());
     			btn1.setText("");
-    			//modeleJeuxInterface objJeux = (modeleJeuxInterface) Naming.lookup("rmi://localhost:" + this.port + "/Jeux");
+    			
     			this.mouvements = objTaquin.actionMove(this.mouvements);
     			this.txtMouvement.setText(String.valueOf(mouvements));
    

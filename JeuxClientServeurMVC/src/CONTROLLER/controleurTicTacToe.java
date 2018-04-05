@@ -47,6 +47,8 @@ public class controleurTicTacToe implements Initializable{
 
 	    @FXML
 	    private ImageView Cas22;
+	    
+	    
 	    private Image icon;
 	    private modeleTicTacToeInterface ObjetDistanceTTT;
 	    private int tab[] = new int [9];
@@ -114,9 +116,7 @@ public class controleurTicTacToe implements Initializable{
 	 
 	    	}
 			return null;
-	    	
-	    	
-	    	
+
 	    }
 
 	    public void ChosirIcon() {
@@ -152,6 +152,7 @@ public class controleurTicTacToe implements Initializable{
 			});
 			t.start();
 		}
+		
 	    public void Refresh() throws RemoteException {
 	    	this.tab = this.ObjetDistanceTTT.getEtat();
 	    	for(int i=0;i<9;i++) {
@@ -185,9 +186,7 @@ public class controleurTicTacToe implements Initializable{
 	    }
 	    @FXML
 	    void ToucheCas00(MouseEvent event) throws RemoteException {
-	    		
 	    		this.ContImg(0);
-	    		
 	    }
 
 	    @FXML
