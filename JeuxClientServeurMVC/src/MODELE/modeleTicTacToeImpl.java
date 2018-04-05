@@ -27,7 +27,7 @@ public class modeleTicTacToeImpl extends UnicastRemoteObject implements modeleTi
 			IdJoueur++;
 		}
 		
-		System.out.println("Client ID : "+IdJoueur);
+		System.out.println("Client ID : " + IdJoueur);
 	}
 	
 	public int getIdJoueur() {

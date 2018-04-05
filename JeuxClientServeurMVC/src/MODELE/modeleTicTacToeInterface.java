@@ -8,4 +8,5 @@ public interface modeleTicTacToeInterface extends java.rmi.Remote{
 		public int getIdJoueur() throws RemoteException;
 		public void setEtat (int[] etat) throws RemoteException;
 		public int[] getEtat() throws RemoteException;
+		
 }
